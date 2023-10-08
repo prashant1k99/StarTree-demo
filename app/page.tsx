@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import { useState, useEffect } from 'react'
 const Posts = dynamic(() => import('@/components/BlogPostListItem'), {
 	ssr: false,
 })
@@ -18,8 +18,8 @@ export default function Home() {
 	const [total, setTotal] = useState(0)
 
 	useEffect(() => {
-		fetch(`/blogs/api?limit=${limit}&skip=${skip}`, {
-			cache: 'no-cache',
+		fetch(`/api?limit=${limit}&skip=${skip}`, {
+			cache: 'force-cache',
 		})
 			.then((res) => res.json())
 			.then((data) => {
