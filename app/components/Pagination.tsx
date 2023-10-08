@@ -17,10 +17,10 @@ export default function Example({
 	const hasNextPage = skip + limit < total
 	return (
 		<nav
-			className="flex items-center justify-between border-t border-gray-200 bg-white py-3"
+			className="flex items-center justify-between border-t border-gray-200 bg-white py-3 dark:bg-gray-800 dark:text-gray-50"
 			aria-label="Pagination">
 			<div className="hidden sm:block">
-				<p className="text-sm text-gray-700">
+				<p className="text-sm text-gray-700 dark:text-gray-200">
 					Showing <span className="font-medium">{skip + 1}</span> to of{' '}
 					<span className="font-medium">{skip + limit}</span> of{' '}
 					<span className="font-medium">{total}</span> results
