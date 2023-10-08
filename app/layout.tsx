@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div className="bg-white py-24 sm:py-32 mx-auto dark:bg-gray-800 dark:text-gray-50">
+				<div className="bg-white py-24 sm:py-32 mx-auto dark:bg-gray-800 dark:text-gray-50 overflow-x-hidden">
 					{children}
 				</div>
 			</body>

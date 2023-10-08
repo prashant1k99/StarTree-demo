@@ -1,10 +1,10 @@
 import React from 'react'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import BlogsService, { IBlog } from '@/data/blogs'
 import UsersService, { IUser } from '@/data/users'
 import formatTime from '@/app/utils/formatTime'
 import Link from 'next/link'
+import Author from '../components/Author'
 
 const BlogContent = ({ blog }: { blog: IBlog }) => {
 	return <div dangerouslySetInnerHTML={{ __html: blog.contentHTML }} />
@@ -42,18 +42,7 @@ function BlogPage({ params }: { params: { id: string } }) {
 						<BlogContent blog={blog} />
 					</div>
 					<div className="pt-12 border-t dark:border-gray-700">
-						<div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-							<Image
-								src={user.profilePic}
-								alt={user.name}
-								width={75}
-								height={75}
-								className="self-center flex-shrink-0 w-12 h-13 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700"></Image>
-							<div className="flex flex-col">
-								<h4 className="text-lg font-semibold">{user.name}</h4>
-								<p className="dark:text-gray-400">{user.email}</p>
-							</div>
-						</div>
+						<Author {...user} />
 					</div>
 				</article>
 			</div>

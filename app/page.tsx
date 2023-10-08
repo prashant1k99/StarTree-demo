@@ -9,6 +9,8 @@ const Pagination = dynamic(() => import('@/components/Pagination'), {
 	ssr: false,
 })
 import { IBlog } from '@/data/blogs'
+import Loading from './components/Loading'
+import NoPostsFound from './components/NoPostsFound'
 
 export default function Home() {
 	const [posts, setPosts] = useState([] as IBlog[])
@@ -29,8 +31,8 @@ export default function Home() {
 			})
 	}, [skip, limit])
 
-	if (isLoading) return <p>Loading...</p>
-	if (!posts) return <p>No posts found</p>
+	if (isLoading) return <Loading />
+	if (!posts) return <NoPostsFound />
 
 	const previousPage = () => {
 		setSkip(skip - limit)
