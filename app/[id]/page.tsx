@@ -33,7 +33,7 @@ function BlogPage({ params }: { params: { id: string } }) {
 						</h1>
 						<p className="text-sm dark:text-gray-300">
 							by <span>{user.name}</span> on{', '}
-							<time datetime={blog.createdAt}>
+							<time dateTime={blog.createdAt}>
 								{formatTime(new Date(blog.createdAt))}
 							</time>
 						</p>
