@@ -9,8 +9,8 @@ const Pagination = dynamic(() => import('@/components/Pagination'), {
 	ssr: false,
 })
 import { IBlog } from '@/data/blogs'
-import Loading from './components/Loading'
-import NoPostsFound from './components/NoPostsFound'
+import Loading from '@/components/Loading'
+import NoPostsFound from '@/components/NoPostsFound'
 
 export default function Home() {
 	const [posts, setPosts] = useState([] as IBlog[])

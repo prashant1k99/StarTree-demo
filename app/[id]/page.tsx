@@ -2,9 +2,9 @@ import React from 'react'
 import { notFound } from 'next/navigation'
 import BlogsService, { IBlog } from '@/data/blogs'
 import UsersService, { IUser } from '@/data/users'
-import formatTime from '@/app/utils/formatTime'
+import formatTime from '@/utils/formatTime'
 import Link from 'next/link'
-import Author from '../components/Author'
+import Author from '@/components/Author'
 
 const BlogContent = ({ blog }: { blog: IBlog }) => {
 	return <div dangerouslySetInnerHTML={{ __html: blog.contentHTML }} />
